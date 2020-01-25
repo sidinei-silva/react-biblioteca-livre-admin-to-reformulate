@@ -1,8 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import GlobalStyle from "./styles/global";
 
 import { isAuthenticated } from "./services/auth";
 
+// Adicionar o import
+import SignUp from "./pages/signup";
 
 /**
  * Componente privado que pega todas as propriedades de Route e separa 
@@ -30,9 +33,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 const Routes = () => (
   <BrowserRouter>
+		<GlobalStyle/>
     <Switch>
       <Route exact path="/" component={() => <h1>Login</h1>} />
-      <Route path="/signup" component={() => <h1>SignUp</h1>} />
+      <Route path="/signup" component={SignUp} />
       <PrivateRoute path="/app" component={() => <h1>App</h1>} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
