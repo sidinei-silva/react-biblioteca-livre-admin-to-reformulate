@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
-export const Body = styled.body`
-  background-color: #007184b8 !important; 
-`;
-
 export const Container = styled.div`
-  
+  background-color: #007184b8 !important; 
   display: flex;
   align-items: center;
   justify-content: center;
