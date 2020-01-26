@@ -5,8 +5,9 @@ import GlobalStyle from "./styles/global";
 import { isAuthenticated } from "./services/auth";
 
 // Adicionar o import
-import SignUp from "./pages/signup";
 import Main from "./pages/main";
+import SignUp from "./pages/signup";
+import Login from "./pages/login";
 
 /**
  * Componente privado que pega todas as propriedades de Route e separa 
@@ -37,7 +38,7 @@ const Routes = () => (
 		<GlobalStyle/>
     <Switch>
       <Route exact path="/" component={Main} />
-      <Route path="/login" component={() => <h1>Login</h1>} />
+      <Route path="/login" component={Login} />
       <Route path="/signup" component={SignUp} />
       <PrivateRoute path="/app" component={() => <h1>App</h1>} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
