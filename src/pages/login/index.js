@@ -24,7 +24,7 @@ class Login extends Component {
         const response = await api.post("/admin/auth", { email, password });
         console.log(response)
         login(response.data.token);
-        this.props.history.push("/app");
+        this.props.history.push("/");
       } catch (err) {
         this.setState({
           error:

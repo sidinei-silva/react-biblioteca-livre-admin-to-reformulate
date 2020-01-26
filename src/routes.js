@@ -37,10 +37,10 @@ const Routes = () => (
   <BrowserRouter>
 		<GlobalStyle/>
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route  path="/home" component={Main} />
       <Route path="/login" component={Login} />
+      <PrivateRoute exact path="/" component={() => <h1>App</h1>} />
       <PrivateRoute path="/signup" component={SignUp} />
-      <PrivateRoute path="/app" component={() => <h1>App</h1>} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
   </BrowserRouter>
