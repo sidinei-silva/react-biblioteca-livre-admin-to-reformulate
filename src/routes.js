@@ -6,6 +6,7 @@ import { isAuthenticated } from "./services/auth";
 
 // Adicionar o import
 import Main from "./pages/main";
+import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import Login from "./pages/login";
 
@@ -37,9 +38,9 @@ const Routes = () => (
   <BrowserRouter>
 		<GlobalStyle/>
     <Switch>
-      <Route  path="/home" component={Main} />
+      <Route path="/" component={Home} />
       <Route path="/login" component={Login} />
-      <PrivateRoute exact path="/" component={() => <h1>App</h1>} />
+      <PrivateRoute exact path="/dashboard" component={() => <h1>App</h1>} />
       <PrivateRoute path="/signup" component={SignUp} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
